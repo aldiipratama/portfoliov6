@@ -42,9 +42,9 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="h-screen w-full flex items-center justify-center snap-start"
+      className="h-screen w-full flex sm:items-center justify-center snap-start"
     >
-      <div className="container px-4 md:px-6 max-w-6xl max-sm:-mt-10 mx-auto flex flex-col lg:flex-row items-center gap-4 sm:gap-12">
+      <div className="container px-4 md:px-6 max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-12">
         {/* Left Column: Title, Description, Filters */}
         <div className="flex-1 lg:w-1/2 text-center lg:text-left">
           <div className="space-y-4 mb-4">
@@ -69,7 +69,8 @@ export default function ProjectsSection() {
         </div>
 
         {/* Right Column: Project Cards Carousel */}
-        <div className="flex-1 lg:w-1/2 w-full relative">
+        <div className="flex-1 lg:w-1/2 w-full relative flex flex-col gap-2 max-sm:-mt-16">
+          <p className="sm:hidden text-center text-muted-foreground">swipe left/right to view other projects</p>
           <Carousel
             opts={{
               align: "start",
