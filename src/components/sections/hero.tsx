@@ -1,9 +1,9 @@
 'use client'
 
-import { useMediaQuery } from "@uidotdev/usehooks";
 import { motion } from 'framer-motion';
 import { Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import ReactCircularText from "react-circular-text";
 import { ReactTyped } from 'react-typed';
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -12,7 +12,20 @@ import BlurText from "../ui/custom/blur-text";
 import SplitText from "../ui/custom/split-text";
 
 export default function Hero() {
-  const isDesktop = useMediaQuery('(min-width: 640px)')
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = matchMedia('(min-width: 640px)')
+    const handleResize = () => {
+      setIsDesktop(mediaQuery.matches);
+    };
+
+    handleResize();
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleResize);
+    };
+  }, [])
 
   return (
     <section className="flex flex-col gap-4 items-center justify-center w-full text-center sm:pt-10 px-4 h-screen snap-start max-sm:pb-20" id="home">
