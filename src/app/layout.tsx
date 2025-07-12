@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SmoothCursor } from "@/components/ui/magic/smooth-cursor";
 import Grid from "@/components/ui/animata/background/grid";
+import { Analytics } from "@vercel/analytics/next"
 
 const poppins = Poppins({
   display: 'swap',
@@ -27,6 +28,7 @@ export default function RootLayout({
       >
         <Grid>
           {children}
+          <Analytics />
           <SmoothCursor />
         </Grid>
       </body>
