@@ -28,7 +28,7 @@ export default function Navbar() {
       <NavigationMenu>
         <NavigationMenuList className="w-screen justify-between px-5 py-4">
           <NavigationMenuItem>
-            <NavigationMenuLink href="/" className={cn(buttonVariants({ variant: 'link' }), 'flex-row gap-0 hover:no-underline hover:text-foreground hover:bg-transparent cursor-none')}>
+            <NavigationMenuLink href="/" className={cn(buttonVariants({ variant: 'link' }), 'flex-row gap-0 hover:no-underline hover:text-foreground hover:bg-transparent')}>
               <span className="text-primary font-extrabold text-xl">{'{'}</span>
               <span className="text-foreground hover:underline">Dyy</span>
               <span className="text-primary font-extrabold text-xl">{'}'}</span>
@@ -42,7 +42,7 @@ export default function Navbar() {
                     href={`#${item.link}`}
                     className={cn(
                       buttonVariants({ variant: 'link' }),
-                      'text-foreground relative z-10 transition-colors duration-200 hover:bg-transparent hover:text-primary hover:font-bold cursor-none',
+                      'text-foreground relative z-10 transition-colors duration-200 hover:bg-transparent hover:text-primary hover:font-bold',
                       item.link === 'home' ? 'text-primary font-bold' : ''
                     )}
                   >

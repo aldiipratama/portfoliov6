@@ -1,19 +1,20 @@
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { ComponentProps } from "react";
 
-export default function SplitText({ children }: ComponentProps<'p'>) {
+export default function SplitText({ children, className }: ComponentProps<'p'>) {
   const text = children?.toString().split(' ')
 
   return (
     <AnimatePresence>
       <p
-        className="text-2xl font-bold shadow-sm space-x-1"
+        className={cn("text-2xl font-bold shadow-sm", className)}
       >
         {
           text?.map((t, i) => (
             <motion.span
               key={i}
-              className="inline-block"
+              className="inline-block px-1 bg-background"
               initial={{
                 opacity: 0,
                 translateY: 10

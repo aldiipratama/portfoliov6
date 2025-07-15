@@ -1,9 +1,8 @@
 'use client'
 
-import BottomBar from "./bottombar";
+import { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import MinimalDotNav from "./navigation-dot";
-import { useEffect, useState } from "react";
 
 export default function Header() {
   const [isDesktop, setIsDesktop] = useState(false)
@@ -21,12 +20,10 @@ export default function Header() {
     };
   }, [])
 
-  return isDesktop ? (
+  return isDesktop && (
     <>
       <Navbar />
       <MinimalDotNav />
     </>
-  ) : (
-    <BottomBar />
   )
 }

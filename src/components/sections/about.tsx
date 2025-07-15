@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Code2, Quote } from "lucide-react";
 import TextRevealEmoji from "../ui/custom/text-hover-reveal-emoji";
 import { IconCloud } from "../ui/magic/icon-cloud";
+import { cn } from "@/lib/utils";
 
 const revealData: RevealDataItem[] = [
   {
@@ -322,7 +323,9 @@ export default function About() {
   );
 
   return (
-    <div id='about' className="w-full h-screen snap-start flex max-sm:flex-col gap-4 justify-center items-center px-10">
+    <section id='about' className={cn("w-full flex max-sm:flex-col justify-center items-center px-10 relative isolate",
+      'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1]'
+    )}>
       <div className="flex items-center justify-center max-sm:order-2">
         <motion.div
           initial={{
@@ -335,13 +338,13 @@ export default function About() {
           }}
           viewport={{ once: true }}
         >
-          <TextRevealEmoji revealData={revealData} className={`sm:w-xl text-justify relative max-sm:text-sm`}>
+          <TextRevealEmoji revealData={revealData} className={`sm:w-xl text-justify relative max-sm:text-sm bg-background`}>
             <Quote size={24} className="absolute -top-5 -left-5" />
             Hello! I&apos;m Muhamad Rinaldi Agus Pratama, my nickname is Aldi. Ever since I first wrote <span className="inline-block px-2 py-1 bg-foreground text-background w-max rounded-2xl me-1">console.log(&apos;Hello World!&apos;)</span>, I fell in love with the process of turning lines of code into something that people can see and use. For me, frontend development is not just about aesthetics, but about creating efficient solutions. I specialize in the Next.js ecosystem and Tailwind CSS to build web applications that perform at lightning speed.
           </TextRevealEmoji>
         </motion.div>
       </div>
-      <div className="flex items-center justify-center max-sm:order-1 max-sm:-mt-20">
+      <div className="flex items-center justify-center max-sm:order-1 pt-20">
         <motion.div
           initial={{
             opacity: 0,
@@ -357,6 +360,6 @@ export default function About() {
           <IconCloud images={images} />
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }

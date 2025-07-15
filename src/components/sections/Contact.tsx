@@ -4,15 +4,18 @@ import { motion } from "framer-motion"
 import { Mail, Linkedin, Twitter, Instagram, Github } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full h-screen snap-start flex flex-col items-center justify-center py-20 px-4 sm:px-10"
+      className={cn("w-full flex flex-col items-center justify-center py-20 px-4 sm:px-10 relative isolate",
+        'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1]'
+      )}
     >
       <motion.h2
-        className="text-4xl font-bold mb-12 text-center"
+        className="text-4xl font-bold mb-12 text-center bg-background rounded-lg"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -28,7 +31,7 @@ export default function Contact() {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <p className="text-lg text-muted-foreground text-center max-w-prose">
+        <p className="text-lg text-muted-foreground text-center max-w-prose bg-background rounded-lg">
           I&apos;m always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out!
         </p>
 

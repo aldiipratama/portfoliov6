@@ -11,6 +11,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import ProjectDetailsModal from "../ui/custom/project-detail-modal"
 import { Project } from "@/types/project"
 import { projects } from "@/data/projects"
+import { cn } from "@/lib/utils"
 
 export default function ProjectsSection() {
   const [isModalOpen, setIsModalOpen] = React.useState(false)
@@ -42,14 +43,16 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="h-screen w-full flex sm:items-center justify-center snap-start"
+      className={cn("w-full flex sm:items-center justify-center relative isolate",
+        'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1] max-sm:pt-20'
+      )}
     >
-      <div className="container px-4 md:px-6 max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-12">
+      <div className="container px-4 md:px-6 max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center gap-12">
         {/* Left Column: Title, Description, Filters */}
         <div className="flex-1 lg:w-1/2 text-center lg:text-left">
           <div className="space-y-4 mb-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">My Project</h2>
-            <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed bg-background">
               Explore some of my recent projects that showcase my expertise in software development and innovative technologies.
             </p>
           </div>
@@ -69,8 +72,8 @@ export default function ProjectsSection() {
         </div>
 
         {/* Right Column: Project Cards Carousel */}
-        <div className="flex-1 lg:w-1/2 w-full relative flex flex-col gap-2 max-sm:-mt-16">
-          <p className="sm:hidden text-center text-muted-foreground">swipe left/right to view other projects</p>
+        <div className="flex-1 lg:w-1/2 w-full relative flex flex-col gap-2">
+          <p className="sm:hidden text-muted-foreground bg-background max-w-max mx-auto">swipe left/right to view other projects</p>
           <Carousel
             opts={{
               align: "start",

@@ -9,7 +9,7 @@ export default function TextRevealEmoji({
 }: TextRevealEmojiProps) {
   if (revealData.length === 0) {
     return <p className={cn(
-      "text-lg text-muted-foreground",
+      "text-lg",
       className
     )}>{children}</p>;
   }
@@ -22,7 +22,7 @@ export default function TextRevealEmoji({
   const pattern = `(${[...revealMap.keys()].map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`;
   const regex = new RegExp(pattern, 'g');
 
-  return <p className={cn("text-lg text-muted-foreground", className)}>
+  return <p className={cn("text-lg", className)}>
     {
       Children.map(children, (child) => {
         if (typeof child === 'string') {

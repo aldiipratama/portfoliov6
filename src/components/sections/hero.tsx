@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import BlurText from "../ui/custom/blur-text";
 import SplitText from "../ui/custom/split-text";
+import { cn } from '@/lib/utils';
 
 export default function Hero() {
   const [isDesktop, setIsDesktop] = useState(false)
@@ -28,7 +29,9 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="flex flex-col gap-4 items-center justify-center w-full text-center sm:pt-10 px-4 h-screen snap-start max-sm:pb-20" id="home">
+    <section className={cn("flex flex-col gap-4 items-center justify-center w-full text-center pt-10 sm:pt-20 px-4 relative isolate",
+      'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1]'
+    )} id="home">
       <div className="grid place-items-center">
         <motion.div
           initial={{
@@ -64,7 +67,7 @@ export default function Hero() {
             ease: 'easeIn'
           }}
         >
-          <ReactTyped strings={['I create bridges between humans and technology through responsive interfaces, using React, Next.js, and Tailwind CSS.']} typeSpeed={20} />
+          <ReactTyped className='bg-background' strings={['I create bridges between humans and technology through responsive interfaces, using React, Next.js, and Tailwind CSS.']} typeSpeed={20} />
         </motion.p>
       </div>
       <motion.div
@@ -83,13 +86,13 @@ export default function Hero() {
         }}
       >
         <Link href={'mailto:paldi0013@gmail.com'} target={'_blank'}>
-          <Button className="uppercase cursor-none">
+          <Button className="uppercase">
             Connect With Me
           </Button>
         </Link>
       </motion.div>
       <div className="grid grid-cols-12 items-center justify-center gap-4 place-items-center sm:gap-20">
-        <Link href={'https://instagram.com/alx.dyy'} className="col-span-6 cursor-none" target="_blank">
+        <Link href={'https://instagram.com/alx.dyy'} className="col-span-6" target="_blank">
           <motion.div
             className="bg-orange-500 size-32 rounded-full flex items-center col-span-6 justify-center"
             initial={{
@@ -115,7 +118,7 @@ export default function Hero() {
             </ReactCircularText>
           </motion.div>
         </Link>
-        <Link href={'https://linkedin.com/in/muhamad-rinaldi-agus-pratama-a21b61295'} className="w-max col-span-6 cursor-none" target="_blank">
+        <Link href={'https://linkedin.com/in/muhamad-rinaldi-agus-pratama-a21b61295'} className="w-max col-span-6" target="_blank">
           <motion.div
             className="bg-sky-500 size-32 rounded-full flex items-center justify-center"
             initial={{
@@ -142,7 +145,7 @@ export default function Hero() {
           </motion.div>
         </Link>
         <div className="flex gap-10 col-span-12 sm:-mt-40">
-          <Link href={'mailto:paldi0013@gmail.com'} target="_blank" className="cursor-none">
+          <Link href={'mailto:paldi0013@gmail.com'} target="_blank">
             <motion.div
               className="bg-green-500 size-32 rounded-full flex items-center justify-center col-span-12"
               initial={{
@@ -168,7 +171,7 @@ export default function Hero() {
               </ReactCircularText>
             </motion.div>
           </Link>
-          <Link href={'https://x.com/paldi07'} target="_blank" className="cursor-none">
+          <Link href={'https://x.com/paldi07'} target="_blank">
             <motion.div
               className="bg-blue-500 size-32 rounded-full flex items-center justify-center col-span-12"
               initial={{

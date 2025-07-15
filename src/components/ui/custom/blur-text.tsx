@@ -1,12 +1,13 @@
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { ComponentProps, memo } from "react";
 
-export default memo(function BlurText({ children }: ComponentProps<'p'>) {
+export default memo(function BlurText({ children, className }: ComponentProps<'p'>) {
   const text = children?.toString().split(' ')
 
   return (
     <AnimatePresence>
-      <p className="space-x-1 shadow-sm">
+      <p className={cn("shadow-sm", className)}>
         {
           text?.map((t, i) => (
             <motion.span
@@ -25,7 +26,7 @@ export default memo(function BlurText({ children }: ComponentProps<'p'>) {
                 delay: i * .3 + .1,
                 duration: .2
               }}
-              className="inline-block"
+              className="inline-block bg-background px-1 shadow-lg"
             >
               {t}
             </motion.span>
