@@ -60,7 +60,7 @@ export default function DotNavigation() {
               <HoverCardTrigger>
                 <Button
                   onClick={() => scrollToSection(item.link)}
-                  className="relative size-[1px] rounded-full cursor-none bg-transparent transition-all duration-300 group hover:scale-100"
+                  className="relative size-[1px] rounded-full bg-transparent transition-all duration-300 group hover:scale-100"
                 >
                   <motion.div
                     className="absolute inset-1 rounded-full bg-primary"
