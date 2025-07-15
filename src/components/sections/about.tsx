@@ -344,7 +344,7 @@ export default function About() {
           </TextRevealEmoji>
         </motion.div>
       </div>
-      <div className="flex items-center justify-center max-sm:order-1 pt-20">
+      <div className="flex items-center justify-center max-sm:order-1 max-sm:pt-20">
         <motion.div
           initial={{
             opacity: 0,
@@ -355,7 +355,6 @@ export default function About() {
             translateX: 0
           }}
           viewport={{ once: true }}
-          className="max-sm:-mt-20"
         >
           <IconCloud images={images} />
         </motion.div>

@@ -37,27 +37,27 @@ export default function Contact() {
 
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="mailto:paldi0013@gmail.com" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" className="cursor-none bg-background border">
+            <Button variant="ghost" className="bg-background border">
               <Mail className="size-4 mr-2" /> Email Me
             </Button>
           </Link>
           <Link href="https://linkedin.com/in/muhamad-rinaldi-agus-pratama-a21b61295" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" className="cursor-none bg-background border">
+            <Button variant="ghost" className="bg-background border">
               <Linkedin className="size-4 mr-2" /> LinkedIn
             </Button>
           </Link>
           <Link href="https://github.com/aldiipratama" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" className="cursor-none bg-background border">
+            <Button variant="ghost" className="bg-background border">
               <Github className="size-4 mr-2" /> GitHub
             </Button>
           </Link>
           <Link href="https://x.com/paldi07" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" className="cursor-none bg-background border">
+            <Button variant="ghost" className="bg-background border">
               <Twitter className="size-4 mr-2" /> Twitter
             </Button>
           </Link>
           <Link href="https://instagram.com/alx.dyy" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" className="cursor-none bg-background border">
+            <Button variant="ghost" className="bg-background border">
               <Instagram className="size-4 mr-2" /> Instagram
             </Button>
           </Link>
