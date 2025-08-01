@@ -1,16 +1,13 @@
 'use client'
 
+import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReactCircularText from "react-circular-text";
-import { ReactTyped } from 'react-typed';
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
-import BlurText from "../ui/custom/blur-text";
-import SplitText from "../ui/custom/split-text";
-import { cn } from '@/lib/utils';
 
 export default function Hero() {
   const [isDesktop, setIsDesktop] = useState(false)
@@ -29,8 +26,8 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className={cn("flex flex-col gap-4 items-center justify-center w-full text-center pt-20 px-4 relative isolate",
-      'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1]'
+    <section className={cn("flex flex-col items-center justify-center w-full text-center px-4 relative isolate",
+      'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1] min-h-screen'
     )} id="home">
       <div className="grid place-items-center gap-2">
         <motion.div
@@ -45,48 +42,89 @@ export default function Hero() {
           }}
           viewport={{ once: false }}
         >
-          <Avatar className="size-16 shadow-sm border-2">
+          <Avatar className="size-20 shadow-sm border-2">
             <AvatarImage src={'/images/avatar.png'} alt="aldiipratama avatar" className="object-cover" />
             <AvatarFallback>AP</AvatarFallback>
           </Avatar>
         </motion.div>
-        <BlurText>Hi i&apos;m Muhamad Rinaldi Agus Pratama</BlurText>
-      </div>
-      <div className="grid">
-        <SplitText>Not Just a Look.</SplitText>
         <motion.p
-          className="text-xs"
           initial={{
+            y: -100,
             opacity: 0
           }}
           animate={{
-            opacity: 1
+            y: 0,
+            opacity: 1,
+            transition: {
+              delay: .3,
+              duration: .6,
+              ease: 'easeInOut'
+            }
+          }}
+        >Hi i&apos;m Muhamad Rinaldi Agus Pratama</motion.p>
+      </div>
+      <div className="grid">
+        <motion.p
+          className={"text-6xl relative font-bold"}
+          initial={{
+            scale: 0,
+            opacity: 0
+          }}
+          animate={{
+            scale: 1,
+            opacity: 1,
+            transition: {
+              delay: .3,
+              duration: .6,
+              ease: 'anticipate'
+            }
+          }}
+        >
+          <span className='inline-block bg-primary w-full h-10 rounded-sm top-1/2 -translate-y-1/2 left-0 absolute -skew-y-2 -z-[1]'></span>
+          Frontend Developer
+        </motion.p>
+        <motion.p
+          className="text-xs mt-2"
+          initial={{
+            opacity: 0,
+            y: 100
+          }}
+          animate={{
+            opacity: 1,
+            y: 0
           }}
           transition={{
             delay: .3,
             ease: 'easeIn'
           }}
         >
-          <ReactTyped strings={['I create bridges between humans and technology through responsive interfaces, using React, Next.js, and Tailwind CSS.']} typeSpeed={20} />
+          I create bridges between humans and technology through responsive interfaces, using React, Next.js, and Tailwind CSS.
         </motion.p>
       </div>
       <motion.div
         initial={{
           opacity: 0,
-          scale: 1.5
+          y: 100
         }}
         animate={{
           opacity: 1,
-          scale: 1
+          y: 0,
+          transition: {
+            delay: .6,
+            duration: .3,
+            ease: 'easeInOut'
+          }
         }}
-        transition={{
-          delay: .3,
-          duration: .3,
-          ease: 'easeInOut'
+        whileHover={{
+          scale: 1.05,
+          transition: {
+            duration: .1,
+            delay: 0
+          }
         }}
       >
         <Link href={'mailto:paldi0013@gmail.com'} target={'_blank'}>
-          <Button className="uppercase">
+          <Button className="uppercase mt-4" size={'lg'}>
             Connect With Me
           </Button>
         </Link>

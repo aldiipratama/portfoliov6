@@ -323,7 +323,7 @@ export default function About() {
   );
 
   return (
-    <section id='about' className={cn("w-full flex max-sm:flex-col justify-center items-center px-10 relative isolate",
+    <section id='about' className={cn("w-full min-h-screen flex max-sm:flex-col justify-center items-center px-10 relative isolate",
       'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1]'
     )}>
       <div className="flex items-center justify-center max-sm:order-2">

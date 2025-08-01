@@ -43,7 +43,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className={cn("w-full flex sm:items-center justify-center relative isolate",
+      className={cn("w-full min-h-screen flex sm:items-center justify-center relative isolate",
         'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1] max-sm:pt-20'
       )}
     >

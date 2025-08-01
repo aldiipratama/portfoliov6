@@ -57,14 +57,14 @@ export default function SplashScreen({ onComplete, children }: SplashScreenProps
             {wipeStarted && (
               <>
                 <motion.div
-                  className="absolute top-0 left-0 w-1/2 h-full bg-gray-200" // Left column
+                  className="absolute top-0 left-0 w-1/2 h-full bg-popover" // Left column
                   initial={{ y: "0%" }}
                   animate={{ y: "-100%" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                   onAnimationComplete={handleWipeComplete} // Only one column needs to trigger completion
                 />
                 <motion.div
-                  className="absolute bottom-0 right-0 w-1/2 h-full bg-gray-300" // Right column
+                  className="absolute bottom-0 right-0 w-1/2 h-full bg-popover" // Right column
                   initial={{ y: "0%" }}
                   animate={{ y: "100%" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}

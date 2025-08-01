@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className={cn("w-full flex flex-col items-center justify-center py-20 px-4 sm:px-10 relative isolate",
+      className={cn("w-full min-h-screen flex flex-col items-center justify-center py-20 px-4 sm:px-10 relative isolate",
         'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1]'
       )}
     >
