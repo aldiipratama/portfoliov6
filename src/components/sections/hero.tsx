@@ -29,10 +29,10 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className={cn("flex flex-col gap-4 items-center justify-center w-full text-center pt-10 sm:pt-20 px-4 relative isolate",
+    <section className={cn("flex flex-col gap-4 items-center justify-center w-full text-center pt-20 px-4 relative isolate",
       'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1]'
     )} id="home">
-      <div className="grid place-items-center">
+      <div className="grid place-items-center gap-2">
         <motion.div
           initial={{
             translateY: isDesktop ? -150 : -50
@@ -45,7 +45,7 @@ export default function Hero() {
           }}
           viewport={{ once: false }}
         >
-          <Avatar className="size-24 shadow-sm border-2">
+          <Avatar className="size-16 shadow-sm border-2">
             <AvatarImage src={'/images/avatar.png'} alt="aldiipratama avatar" className="object-cover" />
             <AvatarFallback>AP</AvatarFallback>
           </Avatar>
@@ -55,7 +55,7 @@ export default function Hero() {
       <div className="grid">
         <SplitText>Not Just a Look.</SplitText>
         <motion.p
-          className="text-xs shadow-sm"
+          className="text-xs"
           initial={{
             opacity: 0
           }}
@@ -67,7 +67,7 @@ export default function Hero() {
             ease: 'easeIn'
           }}
         >
-          <ReactTyped className='bg-background' strings={['I create bridges between humans and technology through responsive interfaces, using React, Next.js, and Tailwind CSS.']} typeSpeed={20} />
+          <ReactTyped strings={['I create bridges between humans and technology through responsive interfaces, using React, Next.js, and Tailwind CSS.']} typeSpeed={20} />
         </motion.p>
       </div>
       <motion.div

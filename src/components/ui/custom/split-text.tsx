@@ -8,13 +8,13 @@ export default function SplitText({ children, className }: ComponentProps<'p'>) 
   return (
     <AnimatePresence>
       <p
-        className={cn("text-2xl font-bold shadow-sm", className)}
+        className={cn("text-2xl font-bold", className)}
       >
         {
           text?.map((t, i) => (
             <motion.span
               key={i}
-              className="inline-block px-1 bg-background"
+              className="inline-block px-1"
               initial={{
                 opacity: 0,
                 translateY: 10

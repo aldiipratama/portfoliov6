@@ -52,7 +52,7 @@ export default function ProjectsSection() {
         <div className="flex-1 lg:w-1/2 text-center lg:text-left">
           <div className="space-y-4 mb-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">My Project</h2>
-            <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed bg-background">
+            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Explore some of my recent projects that showcase my expertise in software development and innovative technologies.
             </p>
           </div>

@@ -15,7 +15,7 @@ export default function Contact() {
       )}
     >
       <motion.h2
-        className="text-4xl font-bold mb-12 text-center bg-background rounded-lg"
+        className="text-4xl font-bold mb-12 text-center rounded-lg"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -31,7 +31,7 @@ export default function Contact() {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <p className="text-lg text-muted-foreground text-center max-w-prose bg-background rounded-lg">
+        <p className="text-lg text-muted-foreground max-w-prose rounded-lg">
           I&apos;m always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out!
         </p>
 

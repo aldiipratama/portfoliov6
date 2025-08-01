@@ -338,7 +338,7 @@ export default function About() {
           }}
           viewport={{ once: true }}
         >
-          <TextRevealEmoji revealData={revealData} className={`sm:w-xl text-justify relative max-sm:text-sm bg-background`}>
+          <TextRevealEmoji revealData={revealData} className={`sm:w-xl text-justify relative max-sm:text-sm`}>
             <Quote size={24} className="absolute -top-5 -left-5" />
             Hello! I&apos;m Muhamad Rinaldi Agus Pratama, my nickname is Aldi. Ever since I first wrote <span className="inline-block px-2 py-1 bg-foreground text-background w-max rounded-2xl me-1">console.log(&apos;Hello World!&apos;)</span>, I fell in love with the process of turning lines of code into something that people can see and use. For me, frontend development is not just about aesthetics, but about creating efficient solutions. I specialize in the Next.js ecosystem and Tailwind CSS to build web applications that perform at lightning speed.
           </TextRevealEmoji>

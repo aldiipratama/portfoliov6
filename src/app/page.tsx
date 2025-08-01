@@ -1,7 +1,6 @@
 'use client'
 
 import Footer from "@/components/layouts/footer";
-import Header from "@/components/layouts/header";
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/hero";
@@ -17,7 +16,6 @@ export default function Home() {
       {
         showMainContent && (
           <>
-            <Header />
             <main>
               <Hero />
               <About />

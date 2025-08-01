@@ -1,10 +1,9 @@
-import Grid from "@/components/ui/animata/background/grid";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const nunito = Nunito({
   display: 'swap',
   subsets: ['latin'],
   weight: '300'
@@ -23,12 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${nunito.className} antialiased bg-[url(/images/bg.png)] bg-background`}
       >
-        <Grid>
-          {children}
-          <Analytics />
-        </Grid>
+        {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ export default memo(function BlurText({ children, className }: ComponentProps<'p
 
   return (
     <AnimatePresence>
-      <p className={cn("shadow-sm", className)}>
+      <p className={cn(className)}>
         {
           text?.map((t, i) => (
             <motion.span
@@ -26,7 +26,7 @@ export default memo(function BlurText({ children, className }: ComponentProps<'p
                 delay: i * .3 + .1,
                 duration: .2
               }}
-              className="inline-block bg-background px-1 shadow-lg"
+              className="inline-block px-1"
             >
               {t}
             </motion.span>
