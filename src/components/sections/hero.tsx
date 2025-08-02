@@ -26,7 +26,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className={cn("flex flex-col items-center justify-center w-full text-center px-4 relative isolate",
+    <section className={cn("flex flex-col items-center justify-center w-full text-center px-4 relative isolate gap-4",
       'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1] min-h-screen'
     )} id="home">
       <div className="grid place-items-center gap-2">
@@ -38,7 +38,8 @@ export default function Hero() {
             translateY: 0,
           }}
           transition={{
-            duration: .5
+            duration: .5,
+            delay: .4
           }}
           viewport={{ once: false }}
         >
@@ -63,9 +64,9 @@ export default function Hero() {
           }}
         >Hi i&apos;m Muhamad Rinaldi Agus Pratama</motion.p>
       </div>
-      <div className="grid">
+      <div className="grid place-items-center">
         <motion.p
-          className={"text-6xl relative font-bold"}
+          className={"text-2xl md:text-6xl relative font-bold w-max px-1"}
           initial={{
             scale: 0,
             opacity: 0
@@ -101,34 +102,64 @@ export default function Hero() {
           I create bridges between humans and technology through responsive interfaces, using React, Next.js, and Tailwind CSS.
         </motion.p>
       </div>
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 100
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            delay: .6,
-            duration: .3,
-            ease: 'easeInOut'
-          }
-        }}
-        whileHover={{
-          scale: 1.05,
-          transition: {
-            duration: .1,
-            delay: 0
-          }
-        }}
-      >
-        <Link href={'mailto:paldi0013@gmail.com'} target={'_blank'}>
-          <Button className="uppercase mt-4" size={'lg'}>
-            Connect With Me
-          </Button>
-        </Link>
-      </motion.div>
+      <div className="flex gap-2">
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: -100
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              delay: .6,
+              duration: .3,
+              ease: 'easeInOut'
+            }
+          }}
+          whileHover={{
+            scale: 1.05,
+            transition: {
+              duration: .1,
+              delay: 0
+            }
+          }}
+        >
+          <Link href={'mailto:paldi0013@gmail.com'} target={'_blank'}>
+            <Button className="uppercase mt-4" variant={'outline'} size={'lg'}>
+              Connect With Me
+            </Button>
+          </Link>
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: 100
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              delay: .6,
+              duration: .3,
+              ease: 'easeInOut'
+            }
+          }}
+          whileHover={{
+            scale: 1.05,
+            transition: {
+              duration: .1,
+              delay: 0
+            }
+          }}
+        >
+          <Link href={'https://drive.google.com/file/d/1qaRdHf4z34r8yy6Yrx53Cq0vbNXppnkH/view?usp=sharing'} target={'_blank'}>
+            <Button className="uppercase mt-4" size={'lg'}>
+              Download CV
+            </Button>
+          </Link>
+        </motion.div>
+      </div>
       <div className="grid grid-cols-12 items-center justify-center gap-4 place-items-center sm:gap-20">
         <Link href={'https://instagram.com/alx.dyy'} className="col-span-6" target="_blank">
           <motion.div

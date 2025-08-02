@@ -29,8 +29,8 @@ export default function ProjectsSection() {
   }
 
   const categories = React.useMemo(() => {
-    const uniqueCategories = new Set(projects.map((project) => project.category))
-    return ["All", ...Array.from(uniqueCategories)].sort()
+    const uniqueCategories = new Set(projects.map((project) => project.category).sort())
+    return ["All", ...Array.from(uniqueCategories)]
   }, [])
 
   const filteredProjects = React.useMemo(() => {
@@ -43,7 +43,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className={cn("w-full min-h-screen flex sm:items-center justify-center relative isolate",
+      className={cn("w-full flex sm:items-center justify-center relative isolate",
         'before:absolute before:inset-0 before:bg-radial before:from-transparent before:to-background before:-z-[1] max-sm:pt-20'
       )}
     >
@@ -52,7 +52,7 @@ export default function ProjectsSection() {
         <div className="flex-1 lg:w-1/2 text-center lg:text-left">
           <div className="space-y-4 mb-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">My Project</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed bg-background">
               Explore some of my recent projects that showcase my expertise in software development and innovative technologies.
             </p>
           </div>
